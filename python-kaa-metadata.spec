@@ -1,7 +1,7 @@
 %define 	module	kaa-metadata
 
-Summary:	Base module for all Kaa modules
-Summary(pl.UTF-8):	Moduł bazowy dla wszystkich modułów Kaa
+Summary:	Media metadata for Python
+Summary(pl.UTF-8):	Metadane multimedialne dla Pythona
 Name:		python-%{module}
 Version:	0.6.0
 Release:	1
@@ -9,26 +9,18 @@ License:	LGPL
 Group:		Libraries/Python
 Source0:	http://dl.sourceforge.net/freevo/%{module}-%{version}.tar.gz
 # Source0-md5:	0df903aa873bdc1ce8ed0e8aa0b81e98
-URL:		http://www.freevo.org/kaa
-BuildRequires:	python-devel >= 2.5
+URL:		http://www.freevo.org/kaa/
+BuildRequires:	python-devel >= 1:2.5
+BuildRequires:	rpm-pythonprov
 %pyrequires_eq	python-modules
 Requires:	python-kaa-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This module contains some basic code needed in all kaa modules.
-
-The module also contains a main loop (notifier). Some kaa modules like
-kaa-Display require the main loop to be running, for other modules
-like kaa-Thumb it's optional and some like kaa-Metadata don't need the
-main loop at all.
+Module for retrieving information about media files.
 
 %description -l pl.UTF-8
-Niniejszy moduł zawiera podstawowy kod wymagany przez wszystkie
-moduły Kaa. Zawiera także główną pętlę (notifier), której niektóre
-moduły kaa, jak np. kaa-Display, wymagają do działania. W przypadku
-pozostałych jest to opcjonalne (np. kaa-Thumb) lub też nie wymagane
-(np. kaa-Metadata).
+Moduł do uzyskiwania informacji o plikach multimedialnych.
 
 %prep
 %setup -q -n %{module}-%{version}
