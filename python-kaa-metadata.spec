@@ -12,6 +12,7 @@ Source0:	http://dl.sourceforge.net/freevo/%{module}-%{version}.tar.gz
 URL:		http://www.freevo.org/kaa/
 BuildRequires:	python-devel >= 1:2.5
 BuildRequires:	rpm-pythonprov
+BuildRequires:	python-kaa-base
 %pyrequires_eq	python-modules
 Requires:	python-kaa-base
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
